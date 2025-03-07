@@ -11,17 +11,17 @@
             "id": "commitMessage",
             "type": "promptString",
             "description": "Enter the commit message",
-            "default": "updated branch"
+            "default": "updated "
         }
     ],
     "tasks": [
         {
-            "label": "Update Daniel",
+            "label": "Update Shai",
             "type": "shell",
             "command": "python",
             "args": [
-                "${workspaceFolder}/update_branch.py",
-                "daniel"
+                "${workspaceFolder}/update_branch_shai.py",
+                "shai"
             ],
             "presentation": {
                 "reveal": "always",
@@ -30,26 +30,12 @@
             "problemMatcher": []
         },
         {
-            "label": "Update Alpha",
+            "label": "Sync alpha and shai with main",
             "type": "shell",
             "command": "python",
             "args": [
-                "${workspaceFolder}/update_branch.py",
-                "alpha"
-            ],
-            "presentation": {
-                "reveal": "always",
-                "panel": "shared"
-            },
-            "problemMatcher": []
-        },
-        {
-            "label": "Update Main",
-            "type": "shell",
-            "command": "python",
-            "args": [
-                "${workspaceFolder}/update_branch.py",
-                "main"
+                "${workspaceFolder}/update_branch_shai.py",
+                "sync_alpha_shai_with_main"
             ],
             "presentation": {
                 "reveal": "always",
@@ -62,7 +48,7 @@
             "type": "shell",
             "command": "python",
             "args": [
-                "${workspaceFolder}/update_branch.py",
+                "${workspaceFolder}/update_branch_shai.py",
                 "add_commit_push",
                 "${input:addArgument}",
                 "${input:commitMessage}"

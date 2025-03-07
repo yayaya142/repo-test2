@@ -8,16 +8,16 @@ def run_command(command):
         print(f"Command failed: {command}")
         sys.exit(result.returncode)
 
-def update_daniel(): # sync the daniel branch with alpha branch
+def update_shai(): # sync the shai branch with alpha branch
     #stage 1:
-    run_command("git checkout daniel")
+    run_command("git checkout shai")
     run_command("git pull origin alpha")
-    run_command("git push origin daniel")
+    run_command("git push origin shai")
     
-def add_commit_push(addArgument, commitMessage):# commit the changes in daniel branch
+def add_commit_push(addArgument, commitMessage):# commit the changes in shai branch
     run_command("git add "+addArgument)
     run_command('git commit -m "{}"'.format(commitMessage))
-    run_command("git push origin daniel")
+    run_command("git push origin shai")
 
 def sync_alpha_shai_with_main():
     run_command("git checkout shai")
@@ -30,21 +30,46 @@ def sync_alpha_shai_with_main():
     run_command("git checkout shai")
 
 
+def validate(num):
+    if (num == 1):
+        print("Stage 1:")
+        print("Sync shai branch with alpha branch")
+    elif (num == 2):
+        print("Stage 2: Workflow:")
+        print("Commit & push the changes in shai branch") 
+    elif (num == 3):
+        print("Stage 3:")
+        print("Sync shai branch & alpha branch with main branch")
+    else:
+        print("Invalid option")
+    
+    option = "n"
+    
+    option = input("Do you want to continue? (y/n): ")
+    if (option == "y" or option == "Y" or option == "yes" or option == "YES"):
+        return True
+    else:
+        print("goodbye")
+        exit()
+
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print("Usage: python update_branch.py [daniel|sync_alpha_shai_with_main|add_commit_push]")
+        print("Usage: python update_branch.py [shai|sync_alpha_shai_with_main|add_commit_push]")
         sys.exit(1)
 
     task = sys.argv[1].lower()
 
-    if task == "daniel":
-        update_daniel()
+    if task == "shai":
+        validate(1)
+        update_shai()
         
     elif task == "sync_alpha_shai_with_main":
+        validate(3)
         sync_alpha_shai_with_main()
         
     elif task == "add_commit_push":
+        validate(2)
         add_argument = sys.argv[2]
         print("add_argument=",add_argument)
         commit_message = " ".join(sys.argv[3:])  # Join all remaining arguments
@@ -56,15 +81,10 @@ if __name__ == '__main__':
             print("Error: Files name or Commit msg cannot be empty.")
             sys.exit(1)
 
-
         add_commit_push(add_argument, commit_message)
 
-
     else:
-
-
         print("Invalid option.")
-
-
         sys.exit(1)
+
 

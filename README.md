@@ -1,5 +1,3 @@
-"# repo-test2" 
-jkjkjnkjnkjnjn in
+this is new test from shai script
 
-
-th
+this is a test for shai
