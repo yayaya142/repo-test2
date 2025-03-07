@@ -31,6 +31,8 @@ def sync_alpha_shai_with_main():
 
 
 def validate(num):
+    print("------------------------------------")
+    print("Welcome to the Git Workflow")
     if (num == 1):
         print("Stage 1:")
         print("Sync shai branch with alpha branch")
