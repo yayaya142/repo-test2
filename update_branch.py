@@ -13,9 +13,9 @@ def update_daniel():
     run_command("git pull origin alpha")
     run_command("git push origin daniel")
     
-def add_commit_push(add, string):
-    run_command("git add "+add)
-    run_command("git commit -m "+string)
+def add_commit_push(addArgument, commitMessage):
+    run_command("git add "+addArgument)
+    run_command('git commit -m "{}"'.format(commitMessage))
     run_command("git push origin daniel")
 
 def update_alpha():

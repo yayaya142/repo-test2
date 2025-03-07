@@ -1,5 +1,19 @@
 {
     "version": "2.0.0",
+    "inputs": [
+        {
+            "id": "addArgument",
+            "type": "promptString",
+            "description": "Enter files to add (e.g., .)",
+            "default": "."
+        },
+        {
+            "id": "commitMessage",
+            "type": "promptString",
+            "description": "Enter the commit message",
+            "default": "updated branch"
+        }
+    ],
     "tasks": [
         {
             "label": "Update Daniel",
@@ -42,6 +56,22 @@
                 "panel": "shared"
             },
             "problemMatcher": []
-        }
+        },
+        {
+            "label": "Add Commit Push",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}/update_branch.py",
+                "add_commit_push",
+                "${input:addArgument}",
+                "${input:commitMessage}"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }        
     ]
 }
