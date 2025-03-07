@@ -8,21 +8,22 @@ def run_command(command):
         print(f"Command failed: {command}")
         sys.exit(result.returncode)
 
-def update_daniel():
+def update_daniel(): # sync the daniel branch with alpha branch
+    #stage 1:
     run_command("git checkout daniel")
     run_command("git pull origin alpha")
     run_command("git push origin daniel")
     
-def add_commit_push(addArgument, commitMessage):
+def add_commit_push(addArgument, commitMessage):# commit the changes in daniel branch
     run_command("git add "+addArgument)
     run_command('git commit -m "{}"'.format(commitMessage))
     run_command("git push origin daniel")
 
-def update_alpha():
+def update_alpha(): # sync the alpha branch with github alpha branch
     run_command("git checkout alpha")
     run_command("git pull origin alpha")
 
-def update_main():
+def update_main(): # sync the main branch with github main branch
     run_command("git checkout main")
     run_command("git pull origin main")
 

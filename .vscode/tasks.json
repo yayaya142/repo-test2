@@ -11,7 +11,7 @@
             "id": "commitMessage",
             "type": "promptString",
             "description": "Enter the commit message",
-            "default": "updated branch"
+            "default": "updated "
         }
     ],
     "tasks": [
