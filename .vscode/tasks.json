@@ -1,0 +1,47 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Update Daniel",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}/update_branch.py",
+                "daniel"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Update Alpha",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}/update_branch.py",
+                "alpha"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Update Main",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}/update_branch.py",
+                "main"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
