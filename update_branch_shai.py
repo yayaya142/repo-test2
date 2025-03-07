@@ -8,16 +8,16 @@ def run_command(command):
         print(f"Command failed: {command}")
         sys.exit(result.returncode)
 
-def update_daniel(): # sync the daniel branch with alpha branch
+def update_shai(): # sync the shai branch with alpha branch
     #stage 1:
-    run_command("git checkout daniel")
+    run_command("git checkout shai")
     run_command("git pull origin alpha")
-    run_command("git push origin daniel")
+    run_command("git push origin shai")
     
-def add_commit_push(addArgument, commitMessage):# commit the changes in daniel branch
+def add_commit_push(addArgument, commitMessage):# commit the changes in shai branch
     run_command("git add "+addArgument)
     run_command('git commit -m "{}"'.format(commitMessage))
-    run_command("git push origin daniel")
+    run_command("git push origin shai")
 
 def sync_alpha_shai_with_main():
     run_command("git checkout shai")
@@ -33,13 +33,14 @@ def sync_alpha_shai_with_main():
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print("Usage: python update_branch.py [daniel|sync_alpha_shai_with_main|add_commit_push]")
+        print("Usage: python update_branch.py [shai|sync_alpha_shai_with_main|add_commit_push]")
         sys.exit(1)
 
     task = sys.argv[1].lower()
-
-    if task == "daniel":
-        update_daniel()
+    print("hello")
+    print("task=",task)
+    if task == "shai":
+        update_shai()
         
     elif task == "sync_alpha_shai_with_main":
         sync_alpha_shai_with_main()
