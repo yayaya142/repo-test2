@@ -62,14 +62,18 @@ if __name__ == '__main__':
 
     if task == "shai":
         validate(1)
+        validate(1) # this is not a mistake, we need to validate twice
+
         update_shai()
         
     elif task == "sync_alpha_shai_with_main":
         validate(3)
+        validate(3) # this is not a mistake, we need to validate twice
+
         sync_alpha_shai_with_main()
         
     elif task == "add_commit_push":
-        validate(2)
+        validate(2) 
         add_argument = sys.argv[2]
         print("add_argument=",add_argument)
         commit_message = " ".join(sys.argv[3:])  # Join all remaining arguments
