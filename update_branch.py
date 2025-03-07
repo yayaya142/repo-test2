@@ -12,6 +12,11 @@ def update_daniel():
     run_command("git checkout daniel")
     run_command("git pull origin alpha")
     run_command("git push origin daniel")
+    
+def add_commit_push(add, string):
+    run_command("git add "+add)
+    run_command("git commit -m "+string)
+    run_command("git push origin daniel")
 
 def update_alpha():
     run_command("git checkout alpha")
