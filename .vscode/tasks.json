@@ -44,20 +44,6 @@
             "problemMatcher": []
         },
         {
-            "label": "Update Main",
-            "type": "shell",
-            "command": "python",
-            "args": [
-                "${workspaceFolder}/update_branch_shai.py",
-                "main"
-            ],
-            "presentation": {
-                "reveal": "always",
-                "panel": "shared"
-            },
-            "problemMatcher": []
-        },
-        {
             "label": "Add Commit Push",
             "type": "shell",
             "command": "python",
