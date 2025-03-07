@@ -46,12 +46,11 @@ def validate(num):
     option = "n"
     
     option = input("Do you want to continue? (y/n): ")
-    if (option == "y"):
+    if (option == "y" or option == "Y" or option == "yes" or option == "YES"):
         return True
     else:
         print("goodbye")
         exit()
-            
 
 
 if __name__ == '__main__':
@@ -60,8 +59,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     task = sys.argv[1].lower()
-    print("hello")
-    print("task=",task)
+
     if task == "shai":
         validate(1)
         update_shai()
