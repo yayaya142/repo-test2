@@ -30,12 +30,12 @@
             "problemMatcher": []
         },
         {
-            "label": "Update Alpha",
+            "label": "Sync alpha and shai with main",
             "type": "shell",
             "command": "python",
             "args": [
                 "${workspaceFolder}/update_branch.py",
-                "alpha"
+                "sync_alpha_shai_with_main"
             ],
             "presentation": {
                 "reveal": "always",
